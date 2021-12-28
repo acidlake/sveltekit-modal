@@ -11,6 +11,7 @@
   // Initiate Modals
   const aboutModal = { showModal: true, modalId: 'about-us' }
   const contactModal = { showModal: true, modalId: 'contact-us' }
+  const processForm = {trigger:true}
 
   // debug
   $: console.log("debug modal", $modalState);
@@ -20,12 +21,12 @@
   <title>Sveltekit Modal</title>
 </svelte:head>
 {#if $modalState == aboutModal}
-  <Modal title="Our company">
+  <Modal title="Our company" buttonOptions={false}>
     <AboutUs />
   </Modal>
 {/if}
 {#if $modalState == contactModal}
-  <Modal title="Contact us">
+  <Modal title="Contact us" buttonOptions={processForm}>
     <ContactForm />
   </Modal>
 {/if}

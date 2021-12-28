@@ -2,6 +2,7 @@
   //
   import { closeModal, processModal } from "$lib/stores/index";
   import Button from "$lib/components/Button.svelte";
+  export let buttonOptions;
 
   //
   export let title = "Modal title goes here.."
@@ -28,8 +29,8 @@
       </div>
       <!--footer-->
       <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-          <Button label="Cancel" on:click={$closeModal({trigger:false})} />
-          <Button label="Continue" on:click={$processModal({trigger:true})} />
+          <Button label="Cancel" on:click={$closeModal} />
+          <Button label="Continue" on:click={$processModal(buttonOptions)} />
       </div>
     </div>
   </div>
